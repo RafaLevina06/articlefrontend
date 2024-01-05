@@ -1,0 +1,18 @@
+<app-navigation></app-navigation>
+
+<div class="page-container">
+    <div class="details-container">
+        <h2>Article Details</h2>
+        <div class="article-details">
+            <p><strong>Name:</strong> {{article.name}}</p>
+            <p><strong>Content:</strong> {{article.content}}</p>
+            <p><strong>Creator:</strong> {{article.User?.name}}</p>
+            <p><strong>Publication Date:</strong> {{ article.publicationDate | date:'medium' }}</p>
+        </div>
+        <div class="action-buttons">
+            <button (click)="deleteArticle()" *ngIf="isCreator">Delete</button>
+            <button (click)="updateArticle()" *ngIf="isCreator">Update</button>
+            <button (click)="goBack()">Back to Article List</button>
+        </div>
+    </div>
+</div>
